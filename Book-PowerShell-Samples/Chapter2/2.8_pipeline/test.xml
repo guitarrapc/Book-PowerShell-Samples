@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="名前" Type="System.String">John Doe</Property>
+    <Property Name="年齢" Type="System.Int32">30</Property>
+    <Property Name="都市" Type="System.String">東京</Property>
+    <Property Name="国" Type="System.String">日本</Property>
+  </Object>
+  <Object Type="System.Management.Automation.PSCustomObject">
+    <Property Name="名前" Type="System.String">Jane Roe</Property>
+    <Property Name="年齢" Type="System.Int32">25</Property>
+    <Property Name="都市" Type="System.String">大阪</Property>
+    <Property Name="国" Type="System.String">日本</Property>
+  </Object>
+</Objects>

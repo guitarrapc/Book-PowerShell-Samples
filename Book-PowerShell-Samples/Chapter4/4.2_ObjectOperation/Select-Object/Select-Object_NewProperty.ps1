@@ -1,0 +1,1 @@
+Get-Process | Where-Object Name -like pw* | Select-Object Name, CPU, WS, @{Name="WSmb"; Expression={[int]($_.WS / 1MB)}}

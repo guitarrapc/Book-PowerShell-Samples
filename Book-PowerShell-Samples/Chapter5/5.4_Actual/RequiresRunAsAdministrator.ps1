@@ -1,0 +1,3 @@
+#Requires -RunAsAdministrator
+
+Get-Uptime

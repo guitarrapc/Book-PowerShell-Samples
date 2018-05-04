@@ -1,0 +1,1 @@
+Get-Uptime | Select-Object Ticks,TotalDays

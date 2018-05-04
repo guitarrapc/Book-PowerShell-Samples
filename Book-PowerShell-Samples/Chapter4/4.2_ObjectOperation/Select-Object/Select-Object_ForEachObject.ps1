@@ -1,0 +1,1 @@
+Get-Process | Where-Object Name -like pw* | ForEach-Object {[pscustomobject]@{Name=$_.Name; CPU=$_.CPU; WS=$_.WS; WSmb =[int]($_.WS / 1MB)}}

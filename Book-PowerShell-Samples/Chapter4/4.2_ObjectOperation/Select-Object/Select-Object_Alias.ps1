@@ -1,0 +1,1 @@
+Get-Uptime | select Ticks,TotalDays

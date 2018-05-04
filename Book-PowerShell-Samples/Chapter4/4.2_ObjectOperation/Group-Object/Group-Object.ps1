@@ -1,0 +1,1 @@
+Get-Process | Group-Object Name
