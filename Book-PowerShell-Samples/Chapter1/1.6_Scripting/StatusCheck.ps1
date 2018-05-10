@@ -25,6 +25,7 @@ while ($true) {
 
         #1分ごとに繰り返す
         $json | Out-File -LiteralPath StatusCheck.log -Append
-    }
+	}
+	# 60秒停止する
     Start-Sleep -Seconds 60
 }
