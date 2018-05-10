@@ -8,10 +8,10 @@ public static class CSharp7Sample
     public static void DeconstructSample()
     {
         var (count, sum) = Tally(new[] {1,2,3,4,5});
-        Console.WriteLine($"{sum}/{count}");
+        Console.WriteLine($"{count}/{sum}");
     }
 
-    public static (int count, int sum) Tally(IEnumerable<int> items)
+	public static (int count, int sum) Tally(IEnumerable<int> items)
     {
         var count = 0;
         var sum = 0;
@@ -23,7 +23,7 @@ public static class CSharp7Sample
         return (count, sum);
     }
 
-    public static void ClassSwitch(object obj)
+	public static void ClassSwitch(object obj)
     {
         switch (obj)
         {
@@ -43,7 +43,6 @@ public static class CSharp7Sample
                 break;
         }        
     }
-    
 }
 "@
 

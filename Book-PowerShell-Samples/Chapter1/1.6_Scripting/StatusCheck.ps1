@@ -1,10 +1,15 @@
 $url = "https://google.com"
-$validStatusCode = 404
+$validStatusCode = 200
 while ($true) {
     #ステータスコードを取得する
-    $statusCode = (Invoke-WebRequest -Uri $url).StatusCode
+    $statusCode = try {
+        (Invoke-WebRequest -Uri $url).StatusCode
+    }
+    catch {
+        $Error[0].Exception.GetBaseException().Response.StatusCode.Value__
+    }
     #ステータスコードが200かどうか確認する
-    if ($statusCode -ne $validStatusCode) {
+    if ($statusCode -eq $validStatusCode) {
         #ファイルがあるかを確認する
         if (-not(Test-Path ./StatusCheck.log)) {
             #StatusCheck.logファイルを作る
