@@ -1,19 +1,20 @@
 $url = "https://google.com"
 $validStatusCode = 200
+$logFile = "./StatusCheck.log" 
 while ($true) {
     #ステータスコードを取得する
     $statusCode = try {
         (Invoke-WebRequest -Uri $url).StatusCode
     }
     catch {
-        $Error[0].Exception.GetBaseException().Response.StatusCode.Value__
+        $_.Exception.GetBaseException().Response.StatusCode.Value__
     }
     #ステータスコードが200かどうか確認する
-    if ($statusCode -eq $validStatusCode) {
-        #ファイルがあるかを確認する
-        if (-not(Test-Path ./StatusCheck.log)) {
-            #StatusCheck.logファイルを作る
-            New-Item -Path ./StatusCheck.log
+    if ($statusCode -ne $validStatusCode) {
+        #ログファイルがあるかを確認する
+        if (-not(Test-Path $logFile)) {
+            #ログファイルを作る
+            New-Item -Path $logFile
         }
 
         #ファイルは後からコマンドから読みやすいようにJSONとする
@@ -24,8 +25,8 @@ while ($true) {
         } | ConvertTo-Json -Compress
 
         #1分ごとに繰り返す
-        $json | Out-File -LiteralPath StatusCheck.log -Append
-	}
-	# 60秒停止する
+        $json | Out-File -LiteralPath $logFile -Append
+    }
+    # 60秒停止する
     Start-Sleep -Seconds 60
 }
