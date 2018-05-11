@@ -11,7 +11,7 @@ function Get-DirectorySize {
   .PARAMETER LiteralPathか
   パラメーターの名前や解説
   .PARAMETER OverSize
-  フォルダのサイズを指定して出力時に大きったか判定します
+  ディレクトリのサイズを指定して出力時に大きったか判定します
   .LINK
   https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6
   #>
