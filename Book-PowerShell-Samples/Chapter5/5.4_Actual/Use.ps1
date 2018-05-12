@@ -12,7 +12,8 @@ function Use([IDisposable]$Disposable, [ScriptBlock]$ScriptBlock) {
     }
 }
 
-Use (New-Object FileStream("foo.text", ([FileMode]::Create -band [FileMode]::Open))) -ScriptBlock {
+$path = Join-Path $pwd foo.txt
+Use (New-Object FileStream($path, ([FileMode]::Create -band [FileMode]::Open))) -ScriptBlock {
     param($writer)
     $bytes = [Encoding]::UTF8.GetBytes("foo")
     $writer.Write($bytes, 0, $bytes.Length)
