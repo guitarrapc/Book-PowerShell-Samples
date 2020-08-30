@@ -1,0 +1,2 @@
+$ErrorView = "NormalView"
+Get-Proce

@@ -1,0 +1,2 @@
+$ErrorView = "ConciseView"
+Get-Proce
